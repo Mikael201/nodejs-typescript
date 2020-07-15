@@ -12,16 +12,12 @@ type Note = {
   body: String;
   writer: String
 }
- 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Hello')
-})
 
 app.post('/save', jsonParser, (req: Request, res: Response) => {
   console.log("tulee POST")
   console.log(req.body)
   const body: Note = req.body as Note
-  if(typeof body.id === 'number' && typeof body.title === 'string' && typeof body.body === 'string' || typeof body.writer === 'string') {
+  if(typeof body.id === 'number' && typeof body.title === 'string' && typeof body.body === 'string' && typeof body.writer === 'string') {
     const note = new Note({
       id: body.id as Number,
       title: body.title as String,
