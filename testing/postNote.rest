@@ -1,0 +1,9 @@
+POST http://localhost:3000/save HTTP/1.1
+content-type: application/json
+
+{
+    "id": "16",
+    "title": "Title16",
+    "body": "Body16",
+    "writer": "Writer16"
+}
